@@ -9,15 +9,15 @@ From: ubuntu:latest
   mv py-sighma.zip\?uuid\=trunk  ${SINGULARITY_ROOTFS}/py-sighma.zip
 
 %post
-  apt-get -y install zip
-  apt-get -y install unzip
-  unzip py-sighma.zip
   apt-get update && apt-get -y install wget build-essential
   apt-get install -y locales
   locale-gen fr_FR.UTF-8
   update-locale LANG=fr_FR.UTF-8
   apt-get install -y python3-dev libpython3-dev python3-mysqldb python3-pip
   pip3 install cython
+  apt-get -y install zip
+  apt-get -y install unzip
+  unzip py-sighma.zip
   cd py-sighma/src
   python3 setup.py
 
